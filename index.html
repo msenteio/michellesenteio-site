@@ -39,7 +39,12 @@
     <p class="role-line">Creative Technology &middot; Play &middot; Brand &middot; Product</p>
     <div class="lede-row">
       <p class="lede">Directed storytelling and content for Looking Glass&rsquo; hardware launches raising $3.5M+ in crowdfunding. Eight years translating cutting edge visual technology into things people want to play with. My super power is bringing game design into everything. Taught at NYU Tisch&rsquo;s Game Center; creator of <em>Swim and Color</em>, a newsletter on the aesthetic, cultural, and emotional importance of play.</p>
-      <a class="lede-swim" href="https://www.swimandcolor.substack.com" target="_blank" rel="noopener"><img class="contain" src="images/swim-color-logo.png" alt="Swim + Color logo sketch"></a>
+      <a class="lede-swim-wrap" href="https://www.swimandcolor.substack.com" target="_blank" rel="noopener">
+        <span class="lede-swim">
+          <img class="lede-swim-img" src="images/swim-color-logo.png" alt="Swim + Color logo sketch">
+        </span>
+        <img class="lede-swim-badge" src="images/substack-badge.svg" alt="Substack">
+      </a>
     </div>
   </header>
 
@@ -47,12 +52,52 @@
     <section class="section" id="experience">
       <h2>Experience</h2>
       <p class="wip">Under construction.</p>
+
+      <h3 class="wip-group-label">Looking Glass</h3>
       <div class="wip-images">
         <img src="images/launch-film-still.jpg" alt="Still from the Looking Glass Go launch film">
         <img src="images/come-over-illustration.jpg" alt="\"Come over?\" illustration">
         <video src="images/carpet-loop.mp4" autoplay muted loop playsinline></video>
-        <video src="images/loveself-loop.mp4" autoplay muted loop playsinline></video>
-        <video src="images/tuned-out-loop.mp4" autoplay muted loop playsinline></video>
+      </div>
+
+      <h3 class="wip-group-label">Games</h3>
+
+      <div class="game-tv">
+
+        <div class="game-clip is-active" data-channel="1" data-title="Love Self">
+          <video src="images/loveself-loop.mp4" autoplay muted loop playsinline></video>
+          <div class="popup-bubble popup-3 pos-tr">Love Self — made for Graffiti Games, Play NYC 2020</div>
+          <div class="popup-bubble popup-3 pos-tl" style="animation-delay:5.5s">Inspired by bell hooks&rsquo; <em>All About Love</em></div>
+          <div class="popup-bubble popup-3 pos-tr" style="animation-delay:11s">Designed by Michelle &middot; dev with Laurenz Riklin</div>
+        </div>
+
+        <div class="game-clip" data-channel="2" data-title="Tuned Out">
+          <video src="images/tuned-out-loop.mp4" muted loop playsinline></video>
+          <div class="popup-bubble popup-3 pos-bl">Tuned Out — made with Ben Sironko &amp; Denver Coulson</div>
+          <div class="popup-bubble popup-3 pos-br" style="animation-delay:5.5s">Winner, Human Human Machine Award &mdash; A MAZE./Berlin</div>
+          <div class="popup-bubble popup-3 pos-bl" style="animation-delay:11s">NYU Game Center Incubator, 2017 &middot; toured XOXO Fest, Fantastic Arcade, Death By Arcade, IndieCade &amp; more</div>
+        </div>
+
+        <div class="game-clip" data-channel="3" data-title="Collect and Destroy">
+          <video src="images/mermaid-loop.mp4" muted loop playsinline></video>
+          <div class="popup-bubble popup-2 pos-tr">Video game music video for Merd Saplo &mdash; &ldquo;Collect and Destroy&rdquo;</div>
+          <div class="popup-bubble popup-2 pos-br" style="animation-delay:5.5s">Made in collaboration with Laurenz Riklin</div>
+        </div>
+
+        <div class="game-clip" data-channel="4" data-title="Got an Idea">
+          <video src="images/gotanidea-loop.mp4" muted loop playsinline></video>
+          <div class="popup-bubble popup-2 pos-tr">Video game music video for Baba Ali &mdash; &ldquo;Got an Idea&rdquo;</div>
+          <div class="popup-bubble popup-2 pos-bl" style="animation-delay:5.5s">Made in collaboration with Laurenz Riklin</div>
+        </div>
+
+        <div class="tv-static"></div>
+
+        <div class="game-tv-controls">
+          <button type="button" class="game-tv-btn" data-dir="-1" aria-label="Previous channel">&#9664;</button>
+          <span class="game-tv-channel">CH <span class="game-tv-channel-num">1</span> &middot; <span class="game-tv-channel-title">Love Self</span></span>
+          <button type="button" class="game-tv-btn" data-dir="1" aria-label="Next channel">&#9654;</button>
+        </div>
+
       </div>
     </section>
 
@@ -71,5 +116,6 @@
   </footer>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
