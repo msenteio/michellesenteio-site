@@ -169,12 +169,85 @@ main{padding:44px 0 8px}
   margin:0;
 }
 
-.wip-group-label{
+.project-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  margin-top:20px;
+}
+
+.project-card:first-of-type{
+  margin-top:0;
+}
+
+.project-card-media{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+
+.project-card-media img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s ease;
+}
+
+.project-card:hover .project-card-media img{
+  transform:scale(1.03);
+}
+
+.project-card-label{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  padding:28px 18px 14px;
+  background:linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
   font-family:var(--serif);
   font-weight:600;
-  font-size:15px;
+  font-size:16px;
+  color:#fff;
+}
+
+.project-card-label .arrow{
+  color:rgba(255,255,255,.75);
+  display:inline-block;
+  margin-left:4px;
+  transition:margin-left .2s ease;
+}
+
+.project-card:hover .project-card-label .arrow{
+  margin-left:9px;
+}
+
+/* ---------- SUBPAGES ---------- */
+.subpage-header{
+  padding:40px 0 8px;
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+.back-link{
+  display:inline-block;
+  font-size:12.5px;
+  color:var(--muted);
+  text-decoration:none;
+  margin-bottom:16px;
+}
+
+.back-link:hover{
   color:var(--ink);
-  margin:32px 0 0;
+}
+
+.subpage-title{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:28px;
+  margin:0;
 }
 
 .wip-images{
