@@ -29,43 +29,19 @@
 })();
 
 (function () {
-  var tv = document.querySelector('.game-tv');
-  if (!tv) return;
+  document.querySelectorAll('.work-item-media').forEach(function (media) {
+    var video = media.querySelector('video');
+    if (!video) return;
 
-  var clips = Array.prototype.slice.call(tv.querySelectorAll('.game-clip'));
-  var channelNum = tv.querySelector('.game-tv-channel-num');
-  var channelTitle = tv.querySelector('.game-tv-channel-title');
-  var staticEl = tv.querySelector('.tv-static');
-  var current = 0;
-  var staticTimeout = null;
+    media.addEventListener('mouseenter', function () {
+      media.classList.add('is-playing');
+      video.currentTime = 0;
+      video.play();
+    });
 
-  function showChannel(index) {
-    clips[current].classList.remove('is-active');
-    clips[current].querySelector('video').pause();
-
-    current = (index + clips.length) % clips.length;
-
-    var clip = clips[current];
-    clip.classList.add('is-active');
-    var video = clip.querySelector('video');
-    video.currentTime = 0;
-    video.play();
-
-    channelNum.textContent = clip.getAttribute('data-channel');
-    channelTitle.textContent = clip.getAttribute('data-title');
-
-    if (staticEl) {
-      clearTimeout(staticTimeout);
-      staticEl.classList.add('is-switching');
-      staticTimeout = setTimeout(function () {
-        staticEl.classList.remove('is-switching');
-      }, 260);
-    }
-  }
-
-  tv.querySelectorAll('.game-tv-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      showChannel(current + parseInt(btn.getAttribute('data-dir'), 10));
+    media.addEventListener('mouseleave', function () {
+      media.classList.remove('is-playing');
+      video.pause();
     });
   });
 })();

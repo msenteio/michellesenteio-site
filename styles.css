@@ -166,7 +166,7 @@ main{padding:44px 0 8px}
   font-style:italic;
   font-size:13.5px;
   color:var(--muted);
-  margin:0;
+  margin:0 0 28px;
 }
 
 .project-card{
@@ -270,155 +270,6 @@ main{padding:44px 0 8px}
   display:block;
 }
 
-/* ---------- GAME TV ---------- */
-.game-tv{
-  position:relative;
-  max-width:640px;
-  margin-top:16px;
-}
-
-.game-clip{
-  position:relative;
-  display:none;
-}
-
-.game-clip.is-active{
-  display:block;
-}
-
-.game-clip video{
-  width:100%;
-  height:380px;
-  object-fit:cover;
-  display:block;
-  border:10px solid #E8DCC8;
-  border-radius:22px;
-  box-shadow:0 0 0 5px #fff, 0 0 0 7px #8B7355;
-}
-
-.tv-static{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:380px;
-  border-radius:22px;
-  overflow:hidden;
-  background-image:url('images/tv-static.svg');
-  background-size:180px 180px;
-  opacity:0;
-  pointer-events:none;
-  z-index:6;
-  transition:opacity .1s linear;
-}
-
-@keyframes tv-static-flicker{
-  0%{ background-position:0 0; }
-  10%{ background-position:-40px 10px; }
-  20%{ background-position:20px -30px; }
-  30%{ background-position:-10px 25px; }
-  40%{ background-position:35px -15px; }
-  50%{ background-position:-25px -5px; }
-  60%{ background-position:15px 20px; }
-  70%{ background-position:-35px -20px; }
-  80%{ background-position:5px 15px; }
-  90%{ background-position:-15px -10px; }
-  100%{ background-position:0 0; }
-}
-
-.tv-static.is-switching{
-  opacity:.92;
-  animation:tv-static-flicker .12s steps(2) infinite;
-}
-
-.game-tv-controls{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  margin-top:18px;
-}
-
-.game-tv-btn{
-  font-family:var(--sans);
-  font-size:14px;
-  color:#3C3226;
-  background:#E8DCC8;
-  border:1.5px solid #8B7355;
-  border-radius:50%;
-  width:36px;
-  height:36px;
-  line-height:1;
-  cursor:pointer;
-  transition:background .15s ease-out;
-}
-
-.game-tv-btn:hover{
-  background:#dccdae;
-}
-
-.game-tv-channel{
-  font-family:var(--serif);
-  font-size:13.5px;
-  color:var(--muted);
-  letter-spacing:.2px;
-  min-width:170px;
-  text-align:center;
-}
-
-.game-tv-channel-num,
-.game-tv-channel-title{
-  color:var(--ink);
-  font-weight:600;
-}
-
-@keyframes popup-cycle{
-  0%, 100%{ opacity:0; transform:scale(.85) translateY(6px); }
-  8%, 22%{ opacity:1; transform:scale(1) translateY(0); }
-  30%{ opacity:0; transform:scale(.9) translateY(-4px); }
-}
-
-.popup-bubble{
-  position:absolute;
-  max-width:220px;
-  background:#E8DCC8;
-  color:#3C3226;
-  border:1.5px solid #8B7355;
-  border-radius:14px;
-  padding:10px 14px;
-  font-family:var(--sans);
-  font-size:12px;
-  font-weight:600;
-  line-height:1.4;
-  box-shadow:0 4px 10px rgba(0,0,0,.18);
-  z-index:3;
-  pointer-events:none;
-  animation-name:popup-cycle;
-  animation-iteration-count:infinite;
-  animation-timing-function:ease-out;
-}
-
-.popup-bubble::after{
-  content:"";
-  position:absolute;
-  width:12px;
-  height:12px;
-  background:#E8DCC8;
-  border-right:1.5px solid #8B7355;
-  border-bottom:1.5px solid #8B7355;
-  bottom:-7px;
-  left:20px;
-  transform:rotate(45deg);
-}
-
-.popup-3{ animation-duration:16.5s; }
-.popup-2{ animation-duration:11s; }
-
-.pos-tl{ top:14px; left:14px; }
-.pos-tr{ top:14px; right:14px; }
-.pos-bl{ bottom:14px; left:14px; }
-.pos-br{ bottom:14px; right:14px; }
-
 .wip-images img.contain{
   object-fit:contain;
   background:#fff;
@@ -459,4 +310,56 @@ ul.contact a:hover{border-bottom-color:var(--ink)}
   font-size:11px;
   color:var(--muted);
   letter-spacing:.3px;
+}
+
+/* ---------- WORK LIST ---------- */
+.work-list{
+  margin-top:20px;
+}
+
+.work-item{
+  margin-bottom:36px;
+}
+
+.work-item:last-child{
+  margin-bottom:0;
+}
+
+.work-item-media{
+  position:relative;
+  width:100%;
+  height:320px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  cursor:pointer;
+}
+
+.work-item-media img,
+.work-item-media video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.work-item-media video{
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.work-item-media.is-playing video{
+  opacity:1;
+}
+
+.work-item-text{
+  margin-top:12px;
+}
+
+.work-item-text h3{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:18px;
+  margin:0 0 4px;
 }
