@@ -298,6 +298,59 @@ ul.rec .yr{
   margin-right:8px;
 }
 
+/* ---------- NEWSLETTER ---------- */
+ul.newsletter-list{list-style:none;margin:0;padding:0}
+
+ul.newsletter-list li{margin-bottom:18px}
+ul.newsletter-list li:last-child{margin-bottom:0}
+
+ul.newsletter-list a{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:14px;
+  text-decoration:none;
+}
+
+.newsletter-title{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+ul.newsletter-list a:hover .newsletter-title{
+  text-decoration:underline;
+}
+
+.newsletter-date{
+  font-size:11px;
+  color:var(--muted);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.newsletter-sub{
+  font-size:12.5px;
+  color:var(--muted);
+  font-style:italic;
+  margin:3px 0 0;
+}
+
+.newsletter-more{
+  display:inline-block;
+  margin-top:22px;
+  font-size:12.5px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+}
+
+.newsletter-more:hover{
+  border-bottom-color:var(--ink);
+}
+
 /* ---------- CONTACT ---------- */
 ul.contact{list-style:none;margin:0;padding:0}
 ul.contact li{margin-bottom:6px;font-size:13.5px}
