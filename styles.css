@@ -299,6 +299,30 @@ ul.rec .yr{
 }
 
 /* ---------- NEWSLETTER ---------- */
+.newsletter-row{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+}
+
+.newsletter-logo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.newsletter-content{
+  flex:1;
+  min-width:0;
+}
+
+@media (max-width:560px){
+  .newsletter-row{flex-direction:column}
+  .newsletter-logo{width:90px;height:90px}
+}
+
 ul.newsletter-list{list-style:none;margin:0;padding:0}
 
 ul.newsletter-list li{margin-bottom:18px}
